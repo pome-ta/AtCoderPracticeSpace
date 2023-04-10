@@ -1,9 +1,11 @@
 import sys
 if sys.platform == 'ios':
+  # todo: そもそも、問題文が存在するか確認した方がいいか
+  from pathlib import Path
   import clipboard
-  a = clipboard.get()
-  a = a.split('\n')
-  text = '\n'.join(a)
+  clipboard_text = clipboard.get()
+  clipboard_text = clipboard_text.split('\n')
+  text = '\n'.join(clipboard_text)
   with open('input_file.txt', 'w') as f:
     f.write(text)
   sys.stdin = open('input_file.txt')
