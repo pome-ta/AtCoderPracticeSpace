@@ -1,15 +1,15 @@
-import sys
 if sys.platform == 'ios':
-  # todo: そもそも、問題文が存在するか確認した方がいいか
+  import sys
+  input_text: str = ''
+  # todo: そもそも、input text が存在するか確認した方がいいか
   from pathlib import Path
   question_path = Path('./input_file.txt')
-  if not question_path.exists():
+  if question_path.exists():
+    input_text = question_path.read_text()
+  else:
     import clipboard
-    clipboard_text = clipboard.get()
-    
-  clipboard_text = clipboard_text.split('\n')
-  text = '\n'.join(clipboard_text)
-  with open('input_file.txt', 'w') as f:
-    f.write(text)
-  sys.stdin = open('input_file.txt')
+    input_text = clipboard.get()
+    question_path.write_text(input_text, encoding='utf-8')
+
+  sys.stdin = input_text
 
