@@ -10,5 +10,7 @@ if sys.platform == 'ios':
     input_example_path.write_text(input_text, encoding='utf-8')
   sys.stdin = open(input_example_path)
 
+a, b = map(int, sys.stdin.readline().split())
 
-values = sys.stdin.readline()
+print('Even' if ((a * b) % 2 == 0) else 'Odd')
+
