@@ -10,3 +10,5 @@ if sys.platform == 'ios':
     input_example_path.write_text(input_text, encoding='utf-8')
   sys.stdin = open(input_example_path)
 
+
+values = sys.stdin.readline()
