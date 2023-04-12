@@ -10,5 +10,6 @@ if sys.platform == 'ios':
     input_example_path.write_text(input_text, encoding='utf-8')
   sys.stdin = open(input_example_path)
 
+#s1, s2, s3 = map(int, list(input()))
+print(sum(map(int, list(input()))))
 
-v = input()
