@@ -15,8 +15,15 @@ if sys.platform == 'ios':
 # 合計 X 円
 # X 円は、何通り
 
-ratio = [500, 100, 50]
-#abcs = [y for row in [[r] * int(input()) for r in ratio] for y in row]
-abcs = [[r] * int(input()) for r in ratio]
-x = input()
+A, B, C = [int(input()) for _ in range(3)]
+X = int(input())
+
+count = 0
+
+for a in range(A + 1):
+  for b in range(B + 1):
+    for c in range(C + 1):
+      count += int((500 * a) + (100 * b) + (50 * c) == X)
+
+print(count)
 
