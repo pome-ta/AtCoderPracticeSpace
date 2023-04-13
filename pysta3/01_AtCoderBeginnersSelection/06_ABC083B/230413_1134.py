@@ -14,4 +14,11 @@ if sys.platform == 'ios':
 # 
 
 N, A, B = map(int, input().split(' '))
+l = range(1, N + 1)
 
+result = 0
+for n in l:
+  a = sum(map(int, list(str(n))))
+  result += n if A <= a and a <= B else 0
+
+print(result)
