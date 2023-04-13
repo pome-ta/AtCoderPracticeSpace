@@ -8,3 +8,9 @@ if sys.platform == 'ios':
   None if _path.exists() else _path.write_text(
     clipboard.get(), encoding='utf-8')
   sys.stdin = open(_path)
+
+N = int(input())
+l = set([int(input()) for _ in range(N)])
+
+print(len(l))
+
