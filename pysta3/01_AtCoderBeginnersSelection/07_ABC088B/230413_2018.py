@@ -14,13 +14,9 @@ if sys.platform == 'ios':
 N = int(input())
 cards = sorted(map(int, input().split(' ')), reverse=True)
 
+score = 0
 for i, c in enumerate(cards):
-  if not i:
-    score = c
-  else:
-    if (i % 2 == 0):
-      score += c
-    else:
-      score -= c
+  score += c if (i % 2 == 0) else -c
 
 print(score)
+
