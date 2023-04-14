@@ -10,7 +10,7 @@ if sys.platform == 'ios':
   sys.stdin = open(_path)
 
 N = int(input())
-l = set([int(input()) for _ in range(N)])
+l = list(set([int(input()) for _ in range(N)]))
 
 print(len(l))
 
