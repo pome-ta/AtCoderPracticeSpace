@@ -12,20 +12,21 @@ if sys.platform == 'ios':
 # N 枚のお札
 # Y 円のお金
 
-N, Y = map(int, input().split(' '))
-ratio = [10000, 5000, 1000]
-M, G, S = [(int(Y / y) if int(Y / y) < N else N) + 1 for y in ratio]
+#20 196000
 
+#1000 1234000
+# 1234
+#14 27 959
+
+
+N, Y = map(int, input().split(' '))
 result = [-1, -1, -1]
 
-for m in range(M):
-  for g in range(G):
-    for s in range(S):
-      num = sum([m, g, s])
-      value = sum([r * y for r, y in zip(ratio, [m, g, s])])
-      if (num < N) and (value == Y):
-        result = [m, g, s]
-        break
+ratio = [10000, 5000, 1000]
+y = int(Y / ratio[2])
 
-print(result)
+# N = m + g + s
+# Y = (m * 10) + (g * 5) + (s * 1)
+
+#print(result)
 

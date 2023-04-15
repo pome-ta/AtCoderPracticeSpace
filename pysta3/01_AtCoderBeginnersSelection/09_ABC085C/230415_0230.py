@@ -27,5 +27,5 @@ for m in range(M):
         result = [m, g, s]
         break
 
-print(result)
+print(result[0], result[1], result[2])
 
