@@ -18,16 +18,19 @@ if sys.platform == 'ios':
 # 1234
 #14 27 959
 
-N, Y = map(int, input().split(' '))
-y = int(Y / 1000)
+# N = m + g + s
+# y = (m * 10) + (g * 5) + (s * 1)
+
+N, Y = map(int, input().split(' '))  # 9
+y = int(Y / 1000)  # 45
 r = [-1, -1, -1]
 
-for s in range(N + 1):
-  for g in range(N + 1 - s):
-    for m in range(N + 1 - s - g):
-      if ((m * 10) + (g * 5) + (s) == y) and (m + g + s == N):
-        r = [m, g, s]
-        break
+#1000
 
-print(r[0], r[1], r[2])
+m = N if Y / 10 < N else y / 10
+g = N if y / 5 < N else y / 5
+s = N if y / 1 < N else y / 1
+
+aaa = [m, g, s]
+print(sum(aaa))
 
