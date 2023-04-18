@@ -12,22 +12,28 @@ if sys.platform == 'ios':
 import re
 
 
+def _out_str(_s, _p) -> str:
+  pass
+
+
 def check_match(_s, _p):
+  print(_s)
+  if _s == '':
+    return 'YES'
   for p in _p:
-    if not(_s):
-      break
     m = re.match(p, _s)
-    x=1
+    x = 1
+    print(m)
     if bool(m):
       e = m.end()
       _s = _s[e:]
       check_match(_s, _p)
-  
-  return 'NO' if _s else 'YES'
+
+  return 'NO'
 
 
 s = input()
-result = 'NO'
+
 re_matches = [r'^dream', r'^dreamer', r'^erase', r'^eraser']
 compile = map(re.compile, re_matches)
 
