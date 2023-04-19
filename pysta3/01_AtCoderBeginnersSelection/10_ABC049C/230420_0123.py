@@ -9,26 +9,6 @@ if sys.platform == 'ios':
     clipboard.get(), encoding='utf-8')
   sys.stdin = open(_path)
 
-import re
-
-# d, e => 
-'''
-dream
-dreamer
-erase
-eraser
-'''
-'''
-dream
-dreamer
-     erase
-     eraser
-d =>
-  5 => ere, 
-  7 => a
-
-'''
-
 
 def str_check(s):
   if s == '':
@@ -66,6 +46,4 @@ def str_check(s):
 
 S = input()
 print('YES' if str_check(S) else 'NO')
-
-#print('YES' if check_match(re_compile, S) else 'NO')
 
