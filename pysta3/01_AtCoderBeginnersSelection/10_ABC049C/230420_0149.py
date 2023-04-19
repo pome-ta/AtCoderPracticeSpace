@@ -14,33 +14,27 @@ def str_check(s):
   if s == '':
     return True
   t = s[0]
-  if t == 'd':
-    if len(s) >= 7:
-      dreamer = s[:7] if s[:7] == 'dreamer' else None
-      if dreamer:
-        c = s[7:]
-        if c == '' or c[0] == 'e' or c[0] == 'd':
-          return str_check(c)
-    if len(s) >= 5:
-      dream = s[:5] if s[:5] == 'dream' else None
-      if dream:
-        c = s[5:]
-        if c == '' or (len(c) >= 3 and (c[0] == 'd' or c[:3] == 'era')):
-          return str_check(c)
 
   if t == 'e':
-    if len(s) >= 6:
-      eraser = s[:6] if s[:6] == 'eraser' else None
-      if eraser:
-        c = s[6:]
-        if c == '' or c[0] == 'e' or c[0] == 'd':
-          return str_check(c)
-    if len(s) >= 5:
-      erase = s[:5] if s[:5] == 'erase' else None
-      if erase:
-        c = s[5:]
-        if c == '' or c[0] == 'e' or c[0] == 'd':
-          return str_check(c)
+    if len(s) >= 6 and s[:6] == 'eraser':
+      c = s[6:]
+      if c == '' or c[0] == 'e' or c[0] == 'd':
+        return str_check(c)
+    if len(s) >= 5 and s[:5] == 'erase':
+      c = s[5:]
+      if c == '' or c[0] == 'e' or c[0] == 'd':
+        return str_check(c)
+
+  if t == 'd':
+    if len(s) >= 7 and s[:7] == 'dreamer':
+      c = s[7:]
+      if c == '' or c[0] == 'e' or c[0] == 'd':
+        return str_check(c)
+    if len(s) >= 5 and s[:5] == 'dream':
+      c = s[5:]
+      if c == '' or c[0] == 'e' or c[0] == 'd':
+        return str_check(c)
+
   return False
 
 
