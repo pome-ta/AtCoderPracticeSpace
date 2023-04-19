@@ -23,6 +23,7 @@ dream
 dreamer
      erase
      eraser
+erasedreamer
 d =>
   5 => ere, 
   7 => a
@@ -45,7 +46,7 @@ def str_check(s):
       dream = s[:5] if s[:5] == 'dream' else None
       if dream:
         c = s[5:]
-        if c == '' or (len(c) > 3 and c[2] != 'a'):
+        if c == '' or (len(c) > 3 and (c[0] == 'd' or c[:3] != 'era')):
           return str_check(c)
 
   if t == 'e':
