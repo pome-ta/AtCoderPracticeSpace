@@ -38,6 +38,6 @@ def str_check(s):
   return False
 
 
-S = input()
+S = str(input()).replace(' ', '')
 print('YES' if str_check(S) else 'NO')
 
