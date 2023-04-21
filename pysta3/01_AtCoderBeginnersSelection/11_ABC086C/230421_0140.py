@@ -10,12 +10,18 @@ if sys.platform == 'ios':
   sys.stdin = open(_path)
 
 
+def manhattan_dis(a, b):
+  return abs(a[0] - b[0]) + abs(a[1] - b[1])
+
+
 def position(t, pxy, axy) -> bool:
-  trgt = sum(pxy)
-  if t + sum(axy) < trgt:
+  p = sum(pxy)
+  if t + sum(axy) < p:
+    return False
+  if t < manhattan_dis(axy, pxy):
     return False
   tmod = True if t % 2 == 0 else False
-  pmod = True if trgt % 2 == 0 else False
+  pmod = True if p % 2 == 0 else False
   return True if tmod == pmod else False
 
 
