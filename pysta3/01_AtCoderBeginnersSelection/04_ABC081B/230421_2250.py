@@ -16,11 +16,10 @@ if sys.platform == 'ios':
 
 def counter(nums, c=0):
   if all([bool(i % 2 == 0) for i in nums]):
-    n = [i / 2 for i in nums]
-    c = counter(n, c + 1)
+    c = counter([i / 2 for i in nums], c + 1)
   return c
 
 
 _ = input()
-print(counter([int(i) for i in input().split(' ')]))
+print(counter([int(i) for i in input().split()]))
 
