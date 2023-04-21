@@ -2,16 +2,12 @@ import sys
 
 if sys.platform == 'ios':
   from pathlib import Path
-  input_example_path = Path('./input_file.txt')
+  import clipboard
 
-  if not input_example_path.exists():
-    import clipboard
-    input_text = clipboard.get()
-    input_example_path.write_text(input_text, encoding='utf-8')
-  sys.stdin = open(input_example_path)
-
-#s1, s2, s3 = map(int, list(input()))
-#print(sum(map(int, list(input()))))
+  _path = Path('./input_file.txt')
+  None if _path.exists() else _path.write_text(
+    clipboard.get(), encoding='utf-8')
+  sys.stdin = open(_path)
 
 print(sum([int(i) for i in input()]))
 
