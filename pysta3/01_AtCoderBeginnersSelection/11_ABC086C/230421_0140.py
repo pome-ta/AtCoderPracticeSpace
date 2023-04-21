@@ -29,7 +29,7 @@ N = int(input())
 
 a = [0, 0]
 for s in range(N):
-  n, _x, _y = map(int, input().split(' '))
+  n, _x, _y = map(int, input().split())
   p = [_x, _y]
   result = position(n, p, a)
   if result:
