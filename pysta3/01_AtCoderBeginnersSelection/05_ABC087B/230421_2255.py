@@ -15,17 +15,11 @@ if sys.platform == 'ios':
 # 合計 X 円
 # X 円は、何通り
 
-a = sys.stdin.readline()
-'''
-A, B, C, X = map(int, sys.stdin.readline().split())
+A, B, C, X = map(int, sys.stdin.readlines())
 
-count = 0
-
-for a in range(A + 1):
-  for b in range(B + 1):
-    for c in range(C + 1):
-      count += int((500 * a) + (100 * b) + (50 * c) == X)
-
-print(count)
-'''
+print(
+  sum([
+    int((500 * a) + (100 * b) + (50 * c) == X)
+    for a in range(A + 1) for b in range(B + 1) for c in range(C + 1)
+  ]))
 

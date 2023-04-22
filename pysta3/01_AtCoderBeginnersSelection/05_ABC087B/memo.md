@@ -13,4 +13,8 @@
 
 ## 2nd.
 
+[提出 #40817245 - AtCoder Beginners Selection](https://atcoder.jp/contests/abs/submissions/40817245)
 
+```
+540 Byte	AC	58 ms	10012 KB
+```
