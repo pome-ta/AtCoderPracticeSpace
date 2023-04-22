@@ -12,3 +12,4 @@ if sys.platform == 'ios':
 #s = list(map(lambda i: i.split() if isinstance(i, list) else i, sys.stdin.readlines()))
 
 a, b, c, s = []
+
