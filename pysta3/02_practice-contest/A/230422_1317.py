@@ -8,3 +8,7 @@ if sys.platform == 'ios':
   None if _path.exists() else _path.write_text(
     clipboard.get(), encoding='utf-8')
   sys.stdin = open(_path)
+
+#s = list(map(lambda i: i.split() if isinstance(i, list) else i, sys.stdin.readlines()))
+
+a, b, c, s = []
