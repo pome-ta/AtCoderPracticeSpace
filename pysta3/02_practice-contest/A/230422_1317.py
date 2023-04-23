@@ -9,9 +9,9 @@ if sys.platform == 'ios':
     clipboard.get(), encoding='utf-8')
   sys.stdin = open(_path)
 
-#s = list(map(lambda i: i.split() if isinstance(i, list) else i, sys.stdin.readlines()))
+a, b, c, s = [
+  int(j) if j.isdecimal() else j
+  for j in sum([i.split() for i in sys.stdin.readlines()], [])
+]
 
-#a, b, c, s = []
-
-a = [ for n, j in  enumerate(sum([i.split() for i in  sys.stdin.readlines()], []))]
-
+print(sum([a, b, c]), s)
