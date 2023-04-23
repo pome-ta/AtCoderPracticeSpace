@@ -11,5 +11,7 @@ if sys.platform == 'ios':
 
 #s = list(map(lambda i: i.split() if isinstance(i, list) else i, sys.stdin.readlines()))
 
-a, b, c, s = []
+#a, b, c, s = []
+
+a = [ for n, j in  enumerate(sum([i.split() for i in  sys.stdin.readlines()], []))]
 
