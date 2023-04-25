@@ -16,13 +16,25 @@ if sys.platform == 'ios':
 # N 個の切れ目のうち K 個
 # K+1 個のピースに分割
 
+from itertools import combinations
+
+
+def get_score(k, cuts, l):
+  pass
+
+
+def yokan_party():
+  pass
+
+
+def comb(l: list, n: int) -> list:
+  for _ in range(n):
+    pass
+
+
 N, L, K, *Ai = [
   int(i) for i in sum([l.split() for l in sys.stdin.readlines()], [])
 ]
 
-l = []
-for i in Ai:
-  lf = L - i
-  rt = L - lf
-  l.append([lf, rt])
+cmb = list(combinations(Ai, K))
 
