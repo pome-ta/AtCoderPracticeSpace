@@ -20,3 +20,9 @@ N, L, K, *Ai = [
   int(i) for i in sum([l.split() for l in sys.stdin.readlines()], [])
 ]
 
+l = []
+for i in Ai:
+  lf = L - i
+  rt = L - lf
+  l.append([lf, rt])
+
