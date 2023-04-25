@@ -28,8 +28,9 @@ def yokan_party():
 
 
 def comb(l: list, n: int) -> list:
-  for _ in range(n):
-    pass
+  _p = [[i for i in range(len(l))] for _ in range(n)]
+  
+  return _p
 
 
 N, L, K, *Ai = [
@@ -37,4 +38,5 @@ N, L, K, *Ai = [
 ]
 
 cmb = list(combinations(Ai, K))
+c = comb(Ai, K)
 
