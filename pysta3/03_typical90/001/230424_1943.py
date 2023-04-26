@@ -19,23 +19,13 @@ if sys.platform == 'ios':
 from itertools import combinations
 
 
-def get_score(k, cuts, l):
-  pass
-
-
-def yokan_party():
-  pass
-
-
+# 階乗
 def frct(num: int) -> int:
-  l = reversed(range(1, num + 1))
-  n = 1
-  n = [ i for i in l]
-  #for i in l:
-  #  n *= i
-  return n
-  
-  #for i in 
+  return 1 if num == 0 else num * frct(num - 1)
+
+
+def cmbntn(n: int, r: int) -> int:
+  pass
 
 
 def comb(l: list, n: int) -> list:
@@ -55,5 +45,7 @@ N, L, K, *Ai = [
 cmb = list(combinations(Ai, K))
 c = comb(Ai, K)
 
-print(frct(5))
+a = []
+for i in range(len(Ai)):
+  print(i)
 
