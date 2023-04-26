@@ -16,8 +16,6 @@ if sys.platform == 'ios':
 # N 個の切れ目のうち K 個
 # K+1 個のピースに分割
 
-from itertools import combinations
-
 
 def combination(arrays: list, k: int) -> list:
   result_list = []
@@ -32,34 +30,23 @@ def combination(arrays: list, k: int) -> list:
   return result_list
 
 
-# 階乗
-def frct(num: int) -> int:
-  return 1 if num == 0 else num * frct(num - 1)
-
-
-def cmbntn(n: int, r: int) -> int:
-  pass
-
-
-def comb(l: list, n: int) -> list:
-  c = []
-  _p = [[i for i in range(len(l))] for _ in range(n)]
-  for x in range(len(l)):
-    for y in range(n):
-      c.append([x, y])
-
-  return c
+def min_div(divs: list, length: int) -> int:
+  order = []
+  one_length = [1] * length
+  old = 0
+  for d in divs:
+    order.append(sum(one_length[old:d]))
+    old = d
+  order.append(sum(one_length[old:]))
+  return min(order)
 
 
 N, L, K, *Ai = [
   int(i) for i in sum([l.split() for l in sys.stdin.readlines()], [])
 ]
 
-cmb = list(combinations(Ai, K))
-c = comb(Ai, K)
-cc = combination(Ai, K)
+cmbs = combination(Ai, K)
+result = [min_div(c, L) for c in cmbs]
 
-a = []
-for i in range(len(Ai)):
-  print(i)
+print(max(result))
 
