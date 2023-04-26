@@ -27,10 +27,25 @@ def yokan_party():
   pass
 
 
-def comb(l: list, n: int) -> list:
-  _p = [[i for i in range(len(l))] for _ in range(n)]
+def frct(num: int) -> int:
+  l = reversed(range(1, num + 1))
+  n = 1
+  n = [ i for i in l]
+  #for i in l:
+  #  n *= i
+  return n
   
-  return _p
+  #for i in 
+
+
+def comb(l: list, n: int) -> list:
+  c = []
+  _p = [[i for i in range(len(l))] for _ in range(n)]
+  for x in range(len(l)):
+    for y in range(n):
+      c.append([x, y])
+
+  return c
 
 
 N, L, K, *Ai = [
@@ -39,4 +54,6 @@ N, L, K, *Ai = [
 
 cmb = list(combinations(Ai, K))
 c = comb(Ai, K)
+
+print(frct(5))
 
