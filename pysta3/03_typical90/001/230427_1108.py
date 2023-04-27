@@ -17,26 +17,16 @@ if sys.platform == 'ios':
 # K+1 個のピースに分割
 
 from itertools import combinations
-'''
-def combination(arrays: list, k: int) -> list:
-  result_list = []
-  if len(arrays) < k:
-    return []
-  if k == 1:
-    result_list = [[i] for i in arrays]
-  else:
-    for i in range(len(arrays) - k + 1):
-      for r in combination(arrays[i + 1:], k - 1):
-        result_list.append([arrays[i], *r])
-  return result_list
-'''
 
 
-def min_div(divs: list) -> int:
+def min_div(divs: list, min_value: int=0) -> int:
   order = []
   old_d = 0
   for d in divs:
-    order.append(d - old_d)
+    o = d - old_d
+    if o == min_value:
+      return o
+    order.append(o)
     old_d = d
   return min(order)
 
@@ -45,9 +35,12 @@ N, L, K, *Ai = [
   int(i) for i in sum([l.split() for l in sys.stdin.readlines()], [])
 ]
 
+min_val = min_div([*Ai, L])
+
 cmbs = combinations(Ai, K)
 cmbs_set = [[*c, L] for c in cmbs]
 
-result_list = [min_div(cmb) for cmb in cmbs_set]
+result_list = [min_div(cmb, min_val) for cmb in cmbs_set]
 
 print(max(result_list))
+
