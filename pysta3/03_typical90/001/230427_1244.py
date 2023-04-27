@@ -19,11 +19,9 @@ if sys.platform == 'ios':
 from itertools import combinations
 
 
-def min_div(divs: list, length: int, min_value: int=0) -> int:
+def min_div(divs: list, min_value: int=0) -> int:
   order = []
   old_d = 0
-  print(type(divs))
-  print(divs.append(length))
   for d in divs:
     o = d - old_d
     if o == min_value:
@@ -37,11 +35,11 @@ N, L, K, *Ai = [
   int(i) for i in sum([l.split() for l in sys.stdin.readlines()], [])
 ]
 
-min_val = min_div(Ai, L)
+min_val = min_div([*Ai, L])
 
 cmbs = combinations(Ai, K)
 
-result_list = [min_div(list(cmb), L, min_val) for cmb in cmbs]
+result_list = [min_div([*cmb, L], min_val) for cmb in cmbs]
 
 print(max(result_list))
 
